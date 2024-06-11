@@ -1,0 +1,45 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+
+.div{
+    border-radius: 10px;
+}
+
+main, .message-space{
+    background-color: rgb(23, 43, 44);
+}
+
+main{
+    width: 35%;
+    border-style: solid;
+    border-radius: 10px;
+    margin-left: 30%;
+}
+
+.message-space{
+    width: 100%;
+    height: 500px;
+}
+
+.msg-box-div{
+    display: flex;
+    flex-direction: row;
+}
+
+#text-box{
+    width: 370px;
+    height: 70px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.send-btn {
+    width: 70px;
+    height: 40px;
+    margin: 5px;
+    border-style: solid;
+    border-radius: 5px;
+}
+
