@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chat App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="/socket.io/socket.io.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <div class="message-space">
-            </div>
-        <ul id="user-list"></ul>
-        <div class="msg-box-div">
-            <div class="text-box-container">
-                <textarea name="" id="text-box" placeholder="Enter your message..."></textarea>
-            </div>
-            <div class="send-btn-div">
-                <input type="submit" value="SEND" class="send-btn" />
-            </div>
+      <section class="users-section">
+        <div class="active-header">
+          <h1>Active Users</h1>
         </div>
+        <ul id="user-list"></ul>
+      </section>
+      <section class="message-section">
+        <div class="message-space"></div>
+        <div class="msg-box-div">
+          <div class="text-box-container">
+            <textarea
+              name=""
+              id="text-box"
+              placeholder="Enter your message..."
+            ></textarea>
+          </div>
+          <div class="send-btn-div">
+            <input type="submit" value="SEND" class="send-btn" />
+          </div>
+        </div>
+      </section>
     </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
-
