@@ -2,19 +2,41 @@
 
 body {
   font-family: "PT Sans", sans-serif;
-  background-color: #f4f4f4;
+  background-color: #2f3036;
   margin: 0;
-  /* display: flex;
-  flex-direction: column; 
-  align-items: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-height: 100vh;
 }
-/* 
-.side-bar{
-    width: 40px;
-    position: fixed;
-    background-color: red;
+
+/* .side-bar{
+    width: 50px;
+    background-color: #2f3036;
+    border: 2px solid #151518;
+    display: none;
 } */
+
+.username-container {
+  width: 40%;
+  background-color: #18191d;
+  color: white;
+  text-align: center;
+  margin-top: 50vh;
+  border-radius: 10px;
+  padding: 0px 0px 40px 0px;
+}
+
+.new-user {
+  width: 60%;
+  height: 35px;
+  border: none;
+  border-radius: 10px;
+  background-color: #2f3036;
+  font-size: large;
+  font-weight: 500;
+  color: white;
+}
 
 main {
   display: flex;
@@ -24,7 +46,7 @@ main {
   height: 100vh;
   background-color: #fff;
   border-radius: 8px;
-  border: 2px solid #ddd;
+  border: 2px solid #151518;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -36,7 +58,7 @@ main {
   background-color: #2f3036;
   color: white;
   border-radius: 5px 0px 0px 5px;
-  border-right: 2px solid #ddd;
+  border-right: 2px solid #151518;
 }
 
 .active-header {
@@ -46,7 +68,7 @@ main {
 .active-user-div {
   width: 100%;
   height: 100%;
-  border-top: 2px solid #ddd;
+  border-top: 2px solid #151518;
 }
 /* 
 .user{
@@ -64,14 +86,14 @@ main {
   padding: 5px;
   background-color: #2f3036;
   border-radius: 5px;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #151518;
 }
 
 .message-space div {
   display: inline-block;
   clear: both;
   min-width: 20%;
-  max-width: 60%;
+  max-width: 45%;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 5px;
@@ -83,11 +105,13 @@ main {
   float: right;
   background-color: #4c5aac;
   color: white;
+  margin-bottom: 20px;
 }
 
 .message-space .received-message {
   float: left;
   background-color: #c5d1e4;
+  margin-bottom: 20px;
 }
 
 .join-message {
@@ -128,13 +152,18 @@ textarea {
   border-radius: 10px;
 }
 
+
+.new-user:focus textarea:focus{
+  outline: none;
+}
+
 .error-message {
   font-size: 12px;
 }
 
 .typing-indicator {
   font-style: italic;
-  color: rgb(77, 76, 76);
+  color: rgb(255, 255, 255);
 }
 
 .send-btn {
@@ -142,7 +171,7 @@ textarea {
   color: white;
   padding: 10px 15px;
   border: none;
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px;
   margin: 20px 0px 0px 0px;
   cursor: pointer;
   transition: background-color 0.3s;

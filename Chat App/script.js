@@ -3,7 +3,13 @@ let username;
 
 function askForUsername() {
   username = prompt("Please enter your username:");
-  socket.emit("set username", username);
+  if(username === "" || username.length < 3){
+    alert("Username too short or empty, Try again!!");
+    askForUsername();
+  }
+  else{
+    socket.emit("set username", username);
+  }
 }
 
 askForUsername();
@@ -21,10 +27,10 @@ const errorMessage = document.createElement("div");
 errorMessage.classList.add("error-message");
 messageSpace.after(errorMessage);
 
-const typingIndicator = document.createElement("p");
+const typingIndicator = document.createElement("div");
 typingIndicator.textContent = "Someone is typing...";
 typingIndicator.style.display = "none";
-
+messageSpace.appendChild(typingIndicator);
 
 sendButton.disabled = true;
 
@@ -70,6 +76,12 @@ socket.on("chat message", (data) => {
   usernameDiv.textContent = data.username + ":";
   usernameDiv.classList.add("username");
   messageElement.classList.add('message');
+
+  // const timeStamp = document.createElement("span");
+  // timeStamp.textContent = timestamp;
+  // timeStamp.classList.add("time-stamp");
+  // messageElement.appendChild(timeStamp);
+
   messageElement.appendChild(usernameDiv);
   messageElement.appendChild(lineBreak);
   messageElement.appendChild(document.createTextNode(data.message));
@@ -117,13 +129,13 @@ function updateUserList(users) {
   });
 }
 
-// socket.on("typing", (data) => {
-//   typingIndicator.textContent = `${data.username} is typing...`;
-//   typingIndicator.style.display = "block";
-//   typingIndicator.classList.add("typing-indicator");
-//   messageSpace.appendChild(typingIndicator);
-// });
+socket.on("typing", (data) => {
+  typingIndicator.textContent = `${data.username} is typing...`;
+  typingIndicator.style.display = "block";
+  typingIndicator.classList.add("typing-indicator");
+  messageSpace.appendChild(typingIndicator);
+});
 
-// socket.on("stop typing", () => {
-//   typingIndicator.style.display = "none";
-// });
+socket.on("stop typing", () => {
+  typingIndicator.style.display = "none";
+});
